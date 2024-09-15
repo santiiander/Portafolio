@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de VS Code - Proyectos Recientes</title>
+    <link rel="stylesheet" href="aboutme.css">
+</head>
+<body>
+    <div class="title-bar-container">
+        <div class="title-bar-buttons">
+            <button class="title-bar-button close"></button>
+            <button class="title-bar-button minimize"></button>
+            <button class="title-bar-button maximize"></button>
+        </div>
+        <div class="title-bar">
+            <div class="title-bar-menu">
+                <button class="menu-button">Archivo</button>
+                <button class="menu-button">Editar</button>
+                <button class="menu-button">Opciones</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Proyectos Recientes</h1>
+        <button class="new-project">Nuevo Proyecto</button>
+    </header>
+
+    <div class="vs-code-window">
+        <div class="sidebar">
+            <ul>
+                <li><img src="resources/redes/files.png" alt="Explorador" title="Explorador"></li>
+                <li><img src="resources/redes/lupa.png" alt="Buscar" title="Buscar"></li>
+                <li><img src="resources/redes/git.png" alt="Git" title="Control de Versiones"></li>
+                <li><img src="resources/redes/te-de-mate.png" alt="Extensiones" title="Extensiones"></li>
+            </ul>
+        </div>
+        <div class="editor">
+            <h2>Proyectos Recientes</h2>
+            <ul class="recent-projects">
+                <li><a href="#" class="project-item" data-project="paperk">PaperK</a></li>
+                <li><a href="#">Proyecto 2</a></li>
+                <li><a href="#">Proyecto 3</a></li>
+                <!-- Puedes agregar más proyectos -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal para el proyecto PaperK -->
+<!-- Modal para el proyecto PaperK -->
+<div id="project-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>PaperK</h2>
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slide">
+                    <img src="resources/mockups/2.png" alt="PaperK Imagen 1" class="project-image">
+                </div>
+                <div class="slide">
+                    <img src="resources/mockups/1.png" alt="PaperK Imagen 2" class="project-image">
+                </div>
+                <div class="slide">
+                    <img src="resources/mockups/3.png" alt="PaperK Imagen 3" class="project-image">
+                </div>
+                <!-- Agrega más imágenes si es necesario -->
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+        <p>Detalles del proyecto PaperK...</p>
+    </div>
+</div>
+
+
+    <footer>
+        <p>&copy; 2024 Santiago Andermatten</p>
+    </footer>
+
+    <script src="aboutme.js"></script>
+</body>
+</html>
