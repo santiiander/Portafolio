@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="proyectos.css">
+    <title>Santiago Andermatten Proy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="floating">Mis proyectos</h1>
+        <p class="subtitle">Creando experiencias digitales únicas</p>
+    </header>
+
+    <div class="container">
+        <div class="project-grid">
+            <div class="project-card" id="paperK">
+                <img src="resources/mockups/test.jpg" alt="PaperK" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-title">PaperK</h3>
+                    <p class="project-description">Plataforma comunitaria de origami para compartir y explorar proyectos.</p>
+                    <button class="project-link" onclick="toggleProjectDetails('paperK')"><span>Explorar</span></button>
+                </div>
+                <div class="project-details">
+                    <div class="details-content">
+                        <div class="details-section">
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Carga de proyectos fácil de usar</li>
+                                <li>Tutoriales interactivos de origami</li>
+                                <li>Foros y discusiones comunitarias</li>
+                                <li>Exposiciones virtuales de origami</li>
+                            </ul>
+                        </div>
+                        <div class="details-section">
+                            <h4>Tecnologías</h4>
+                            <ul>
+                                <li>HTML, Css y Js para el frontend</li>
+                                <li>Python, FastAPI Y SqlAlchemy para el backend</li>
+                                <li>MySQL (Railway) para la base de datos</li>
+                                <li>Github pages y Railway para el despliegue</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="details-actions">
+                        <a href="https://santiiander.github.io/PaperKFront/" class="action-button visit-button">Visitar Proyecto</a>
+                        <a href="https://github.com/santiiander/proyectPaperK" class="action-button source-button">Ver Código Fuente</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" id="techBlog">
+                <img src="resources/mockups/test2.png" alt="TechBlog" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-title">TechBlog</h3>
+                    <p class="project-description">Blog de tecnología con artículos sobre las últimas tendencias y avances. (Out Service)</p>
+                    <button class="project-link" onclick="toggleProjectDetails('techBlog')"><span>Explorar</span></button>
+                </div>
+                <div class="project-details">
+                    <div class="details-content">
+                        <div class="details-section">
+                            <h4>Características</h4>
+                            <ul>
+                                <li>Sistema de gestión de contenidos</li>
+                                <li>Comentarios y discusiones en artículos</li>
+                                <li>Categorización y etiquetado de posts</li>
+                                <li>Búsqueda avanzada de contenido</li>
+                            </ul>
+                        </div>
+                        <div class="details-section">
+                            <h4>Tecnologías</h4>
+                            <ul>
+                                <li>Vue.js para el frontend</li>
+                                <li>Node.JS para el backend</li>
+                                <li>Mysql para la base de datos</li>
+                                <li>Railway para despliegue</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="details-actions">
+                        <a href="#" class="action-button visit-button">Visitar Proyecto</a>
+                        <a href="#" class="action-button source-button">Ver Código Fuente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Mi Portafolio Destacado. Creado con pasión y creatividad.</p>
+    </footer>
+    <script src="proyectos.js"></script>
+</body>
+</html>
