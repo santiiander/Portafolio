@@ -1,106 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Santiago Andermatten PF</title>
-    <link rel="icon" href="resources/profile/web.png" type="image/x-icon">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='js/slide.js'></script>
-    <script src="js/main.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santiago Andermatten - Desarrollador Backend</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="header-left">
-            <h1 class="nombre">Santiago Andermatten</h1>
-        </div>
-        <nav class="header-right">
-            <ul>
-                <li><a href="#about">SOBRE MI</a></li>
-                <li><a href="proyectos.html">PROYECTOS</a></li>
-                <li><a href="#contact">CONTACTAME</a></li>
-            </ul>
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <div class="parent">
-        <div class="div1">
-            <h2>Técnico Superior en Programación</h2>
-            <p>
-                Soy un apasionado de los videojuegos y me encanta aprender nuevas tecnologías. 
-                Disfruto mucho de adquirir conocimientos en backend y me entusiasma explorar 
-                nuevas herramientas según los requerimientos del proyecto.
-            </p>
-        </div>
-        <div class="div2">
-            <img src="resources/profile/yo.png" alt="Descripción de la imagen">
-        </div>
-        <div class="div3">
-            <h2 style="color: #FF6584;">PaperK</h2>
-            <div class="gallery">
-                <div class="main-image">
-                    <img src="resources/mockups/1.png" alt="PaperK Mockup 1" id="main-mockup">
-                </div>
-                <div class="thumbnails">
-                    <img src="resources/mockups/1.png" alt="Thumbnail 1" class="active">
-                    <img src="resources/mockups/2.png" alt="Thumbnail 2">
-                    <img src="resources/mockups/3.png" alt="Thumbnail 3">
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1 class="glitch" data-text="Santiago Andermatten">Santiago Andermatten</h1>
+                <p class="subtitle">Desarrollador Backend & Arquitecto de Sistemas</p>
+                <a href="#contacto" class="cta-button">Contáctame</a>
+            </div>
+        </section>
+
+        <section id="sobre-mi">
+            <div class="container">
+                <h2 class="section-title">Sobre Mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="rounded-container">
+                            <h3 class="centered-title">Perfil Profesional</h3>
+                            <p>Soy un apasionado desarrollador backend con una sólida formación en ingeniería electrónica y programación. Mi objetivo es crear soluciones eficientes y escalables que impulsen la próxima generación de aplicaciones web y servicios.</p>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <div class="rounded-container">
+                            <h3 class="centered-title">Stack Tecnológico</h3>
+                            <ul class="tech-list">
+                                <li><i class="fab fa-python"></i> Python</li>
+                                <li><i class="fab fa-java"></i> Java</li>
+                                <li><i class="fab fa-node-js"></i> Node.js</li>
+                                <li><i class="fas fa-database"></i> SQL/NoSQL</li>
+                                <li><i class="fab fa-docker"></i> Docker</li>
+                                <li><i class="fab fa-aws"></i> AWS</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p class="parrafoDescrip"> 
-                📝 Es un lugar donde puedes compartir tus proyectos de origami, explorar los de otros y descubrir nuevas ideas. Si te apasiona el arte del plegado de papel o simplemente te interesa, ¡me encantaría que te unas!
-            </p>
-            <h3>¿Qué puedes hacer en paperK? </h3>
-            <ul>
-                <li>Sube tus creaciones de origami en formato PDF e imágenes.</li>
-                <li>Explora proyectos inspiradores de otros usuarios.</li>
-                <li>Comparte y recibe feedback de la comunidad.</li>
-            </ul>
-        </div>
-        <div class="div4" id="redes">
-            <span><a href="https://www.linkedin.com/in/santiago-andermatten/"><img src="resources/redes/linkedin.png" alt=""></a></span>
-            <span><a href="https://x.com/Santii_ander"><img src="resources/redes/twitter.png" alt=""></a></span>
-            <span><a href="https://www.instagram.com/santii_ander/"><img src="resources/redes/instagram.png" alt=""></a></span>
-        </div>
-        <div class="div5">
-            <div class="contact-info">
-                <img src="resources/redes/gmail.png" alt="gmail" class="contact-icon">
-                <h2 class="contact-email">
-                    <a href="mailto:santiagoandermattendev@gmail.com">
-                        santiagoandermattendev@gmail.com
+        </section>
+
+        <section id="personal-info">
+            <div class="container">
+                <h2 class="section-title">Conóceme Mejor</h2>
+                <div class="personal-content">
+                    <div class="photo-container">
+                        <img src="yo.png" alt="Santiago Andermatten" class="profile-photo">
+                    </div>
+                    <div class="interests-hobbies">
+                        <div class="rounded-container">
+                            <h3 class="centered-title">Intereses y Hobbies</h3>
+                            <ul>
+                                <li>Desarrollo de proyectos open source</li>
+                                <li>Lectura de libros de ciencia ficción</li>
+                                <li>Mates al aire libre y videojuegos</li>
+                                <li>Participación en hackathons y eventos tech</li>
+                                <li>Viajar con mi pareja</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <img src="Untitled.png" alt="Imagen 1" class="carousel-image">
+                        <img src="2.png" alt="Imagen 2" class="carousel-image">
+                        <img src="3.png" alt="Imagen 3" class="carousel-image">
+                    </div>
+                    <button class="carousel-button prev" aria-label="Imagen anterior">&lt;</button>
+                    <button class="carousel-button next" aria-label="Imagen siguiente">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <div class="container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Desarrollo Backend</h3>
+                        <p>Diseño e implementación de aplicaciones robustas del lado del servidor</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>Diseño de Bases de Datos</h3>
+                        <p>Creación de estructuras de bases de datos eficientes y escalables</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Desarrollo de APIs</h3>
+                        <p>Construcción de APIs RESTful y GraphQL para una integración perfecta</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>ProjetPaperK</h3>
+                        <p>PWA basada en la subida y descarga de archivos orgiamis para la comunidad</p>
+                        <button class="project-details-btn">Ver más</button>
+                        <div class="project-details">
+                            <p>Este proyecto implicó la creación de una aplicación web para la gestión eficiente usuarios, creacion de los mismos, creacion y manejo de proyectos junto con sus likes</p>
+                            <h4>Tecnologías utilizadas:</h4>
+                            <ul>
+                                <li>Python con FASTAPI para el backend</li>
+                                <li>MySQL para la base de datos</li>
+                                <li>HTML, Css Y Js para el frontend</li>
+                                <li>Railway para el despliegue y hosting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>APP sistema Blog</h3>
+                        <p>Desarrollo de una API para gestionar un blog</p>
+                        <button class="project-details-btn">Ver más</button>
+                        <div class="project-details">
+                            <p>Desarrollé una API robusta para manejar la gestión y distribución elementos dinamicos de un blog personal para un cliente (Out)</p>
+                            <h4>Características clave:</h4>
+                            <ul>
+                                <li>Implementación una interfaz sencilla pero atractiva</li>
+                                <li>Sistema de autenticación y autorización OAuth 2.0</li>
+                                <li>Análisis de audiencia en tiempo real con Elasticsearch</li>
+                                <li>Escalado automático con Kubernetes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <div class="container">
+                <h2 class="section-title">Experiencia Laboral</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Tutor de Programación</h3>
+                            <p class="timeline-date">Kodland | 2023 - Presente</p>
+                            <ul>
+                                <li>Mejoré el rendimiento de los estudiantes en un 20%.</li>
+                                <li>Logré ser tutor avanzado en 2 meses.</li>
+                                <li>Incrementé la venta de cursos de Python.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Desarrollo y gestión de Software</h3>
+                            <p class="timeline-date">Trabajo personal | 2020 - 2024</p>
+                            <p>Desarrollo de software para pequeños negocios; gestión de inventarios y ventas.</p>
+                            <p>Logro: Incrementé la eficiencia operativa de los clientes.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Desarrollo y gestión de Software</h3>
+                            <p class="timeline-date">Estudio Telered | 2018 - 2020</p>
+                            <p>Manejo de herramientas y software para eventos en vivo.</p>
+                            <p>Logro: Mejoré la eficiencia de transmisiones en un 30%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="container">
+                <h2 class="section-title">Contáctame</h2>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Mensaje" required></textarea>
+                    <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="redes-sociales">
+            <div class="container">
+                <h2 class="section-title">Mis Redes Sociales</h2>
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="social-item">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <span>LinkedIn</span>
                     </a>
-                </h2>
-            </div>
-        </div>
-        <div class="div6">
-            <div class="slider">
-                <div class="slides">
-                    <img src="resources/slide_mascotas/Caveira1.png" alt="Image 1">
-                    <img src="resources/slide_mascotas/Milan1.png">
-                    <img src="resources/slide_mascotas/Caveira2.png">
-                    <img src="resources/slide_mascotas/Milan2.png">
-                    <img src="resources/slide_mascotas/Caveira3.png">
+                    <a href="https://www.instagram.com/your-instagram-profile" target="_blank" class="social-item">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://twitter.com/your-twitter-profile" target="_blank" class="social-item">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <span>X (Twitter)</span>
+                    </a>
+                    <a href="https://github.com/santiiander" target="_blank" class="social-item">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <span>GitHub</span>
+                    </a>
                 </div>
             </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Santiago Andermatten. Todos los derechos reservados.</p>
         </div>
-        <div class="div7">
-            <div class="flecha"><img src="resources/redes/right-up.png" alt="flecha"></div>
-            <div class="pregunta">¿Alguna pregunta?</div>
-            <div class="contactame">Contactame.</div>
-        </div>
-        <div class="div8">
-            <div class="contact-info">
-                <a href="https://github.com/santiiander"><img src="resources/redes/github.png" alt="gmail" class="contact-icon"></a>
-            </div>
-        </div>
-    </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
