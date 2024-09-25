@@ -134,3 +134,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const main = document.querySelector('main');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let isScrolling = false;
+    let lastScrollTop = 0;
+    const scrollThreshold = 50;
+
+    // Existing code...
+
+    // New code for popup functionality
+    const openPresentationBtn = document.getElementById('open-presentation');
+    const presentationPopup = document.getElementById('presentation-popup');
+    const closePopupBtn = document.querySelector('.close-popup');
+    const presentationVideo = document.getElementById('presentation-video');
+
+    openPresentationBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        presentationPopup.style.display = 'block';
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+        presentationPopup.style.display = 'none';
+        presentationVideo.pause();
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === presentationPopup) {
+            presentationPopup.style.display = 'none';
+            presentationVideo.pause();
+        }
+    });
+
+    // Download CV functionality
+    const downloadCvBtn = document.getElementById('download-cv');
+    downloadCvBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Replace 'path-to-your-cv.pdf' with the actual path to your CV file
+        window.open('recursos/CVAndermatten.pdf', '_blank');
+    });
+
+    // Existing code...
+});
