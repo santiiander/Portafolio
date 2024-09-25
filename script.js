@@ -1,13 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+    const main = document.querySelector('main');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let isScrolling = false;
+    let lastScrollTop = 0;
+    const scrollThreshold = 50; // Adjust this value to change the scroll sensitivity
 
     // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
@@ -18,20 +15,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('section').forEach(section => {
+    sections.forEach(section => {
         observer.observe(section);
     });
 
-    // Project details toggle
-    document.querySelectorAll('.project-details-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const details = button.nextElementSibling;
-            details.classList.toggle('active');
-            button.textContent = details.classList.contains('active') ? 'Ver menos' : 'Ver más';
+    // Smooth scrolling for navigation links
+    navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // Form submission
+    // Improved scroll handling
+    main.addEventListener('scroll', () => {
+        if (isScrolling) return;
+
+        const currentScrollTop = main.scrollTop;
+        const scrollDirection = currentScrollTop > lastScrollTop ? 'down' : 'up';
+        const scrollDifference = Math.abs(currentScrollTop - lastScrollTop);
+
+        if (scrollDifference > scrollThreshold) {
+            isScrolling = true;
+            const currentSectionIndex = Array.from(sections).findIndex(section => 
+                section.offsetTop <= currentScrollTop + window.innerHeight / 2 &&
+                section.offsetTop + section.offsetHeight > currentScrollTop + window.innerHeight / 2
+            );
+
+            let targetIndex = scrollDirection === 'down' ? currentSectionIndex + 1 : currentSectionIndex - 1;
+            targetIndex = Math.max(0, Math.min(targetIndex, sections.length - 1));
+
+            sections[targetIndex].scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                isScrolling = false;
+                lastScrollTop = main.scrollTop;
+            }, 1000);
+        } else {
+            lastScrollTop = currentScrollTop;
+        }
+    });
+
+    // Carousel functionality
+    const carousel = document.querySelector('.carousel');
+    const images = carousel.querySelectorAll('img');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    nextButton.addEventListener('click', nextImage);
+    prevButton.addEventListener('click', prevImage);
+
+    // Auto-slide every 5 seconds
+    let autoSlideInterval = setInterval(nextImage, 5000);
+
+    // Pause auto-slide on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(nextImage, 5000);
+    });
+
+                // Form submission
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -67,56 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error:', error);
             alert(`Hubo un problema al enviar el mensaje: ${error.message}`);
-        }
-    });
-
-    // Carousel functionality
-    const carousel = document.querySelector('.carousel');
-    const images = carousel.querySelectorAll('img');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let currentIndex = 0;
-
-    function showImage(index) {
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
-
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    }
-
-    nextButton.addEventListener('click', nextImage);
-    prevButton.addEventListener('click', prevImage);
-
-    // Auto-slide every 5 seconds
-    let autoSlideInterval = setInterval(nextImage, 5000);
-
-    // Pause auto-slide on hover
-    const carouselContainer = document.querySelector('.carousel-container');
-    carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-        prevButton.style.display = 'block';
-        nextButton.style.display = 'block';
-    });
-
-    carouselContainer.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(nextImage, 5000);
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'none';
-    });
-
-    // Keyboard navigation for carousel
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevImage();
-        } else if (e.key === 'ArrowRight') {
-            nextImage();
         }
     });
 });

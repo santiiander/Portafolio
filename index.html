@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santiago Andermatten - Desarrollador Backend</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="container">
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#experiencia">Experiencia</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
-            <div class="container">
-                <h1 class="glitch" data-text="Santiago Andermatten">Santiago Andermatten</h1>
+            <div class="hero-content">
+                <h1>Santiago Andermatten</h1>
                 <p class="subtitle">Desarrollador Backend & Arquitecto de Sistemas</p>
                 <a href="#contacto" class="cta-button">Contáctame</a>
             </div>
@@ -37,23 +37,19 @@
                 <h2 class="section-title">Sobre Mí</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <div class="rounded-container">
-                            <h3 class="centered-title">Perfil Profesional</h3>
-                            <p>Soy un apasionado desarrollador backend con una sólida formación en ingeniería electrónica y programación. Mi objetivo es crear soluciones eficientes y escalables que impulsen la próxima generación de aplicaciones web y servicios.</p>
-                        </div>
+                        <h3 class="centered-title">Perfil Profesional</h3>
+                        <p>Soy un apasionado desarrollador backend con una sólida formación en ingeniería electrónica y programación. Mi objetivo es crear soluciones eficientes y escalables que impulsen la próxima generación de aplicaciones web y servicios.</p>
                     </div>
                     <div class="tech-stack">
-                        <div class="rounded-container">
-                            <h3 class="centered-title">Stack Tecnológico</h3>
-                            <ul class="tech-list">
-                                <li><i class="fab fa-python"></i> Python</li>
-                                <li><i class="fab fa-java"></i> Java</li>
-                                <li><i class="fab fa-node-js"></i> Node.js</li>
-                                <li><i class="fas fa-database"></i> SQL/NoSQL</li>
-                                <li><i class="fab fa-docker"></i> Docker</li>
-                                <li><i class="fab fa-aws"></i> AWS</li>
-                            </ul>
-                        </div>
+                        <h3 class="centered-title">Stack Tecnológico</h3>
+                        <ul class="tech-list">
+                            <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fab fa-java"></i> Java</li>
+                            <li><i class="fab fa-node-js"></i> Node.js</li>
+                            <li><i class="fas fa-database"></i> SQL/NoSQL</li>
+                            <li><i class="fab fa-docker"></i> Docker</li>
+                            <li><i class="fab fa-aws"></i> AWS</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -67,16 +63,14 @@
                         <img src="yo.png" alt="Santiago Andermatten" class="profile-photo">
                     </div>
                     <div class="interests-hobbies">
-                        <div class="rounded-container">
-                            <h3 class="centered-title">Intereses y Hobbies</h3>
-                            <ul>
-                                <li>Desarrollo de proyectos open source</li>
-                                <li>Lectura de libros de ciencia ficción</li>
-                                <li>Mates al aire libre y videojuegos</li>
-                                <li>Participación en hackathons y eventos tech</li>
-                                <li>Viajar con mi pareja</li>
-                            </ul>
-                        </div>
+                        <h3 class="centered-title">Intereses y Hobbies</h3>
+                        <ul>
+                            <li>Desarrollo de proyectos open source</li>
+                            <li>Lectura de libros de ciencia ficción</li>
+                            <li>Mates al aire libre y videojuegos</li>
+                            <li>Participación en hackathons y eventos tech</li>
+                            <li>Viajar con mi pareja</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="carousel-container">
@@ -119,33 +113,39 @@
                 <h2 class="section-title">Proyectos Destacados</h2>
                 <div class="project-grid">
                     <div class="project-card">
-                        <h3>ProjetPaperK</h3>
-                        <p>PWA basada en la subida y descarga de archivos orgiamis para la comunidad</p>
-                        <button class="project-details-btn">Ver más</button>
-                        <div class="project-details">
-                            <p>Este proyecto implicó la creación de una aplicación web para la gestión eficiente usuarios, creacion de los mismos, creacion y manejo de proyectos junto con sus likes</p>
-                            <h4>Tecnologías utilizadas:</h4>
-                            <ul>
-                                <li>Python con FASTAPI para el backend</li>
-                                <li>MySQL para la base de datos</li>
-                                <li>HTML, Css Y Js para el frontend</li>
-                                <li>Railway para el despliegue y hosting</li>
-                            </ul>
+                        <img src="paperK.png" alt="ProjetPaperK" class="project-image">
+                        <div class="project-content">
+                            <h3>ProyetPaperK</h3>
+                            <p>PWA basada en la subida y descarga de archivos origamis para la comunidad</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FASTAPI</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">HTML/CSS/JS</span>
+                                <span class="tech-tag">OAuth 2.0</span>
+                                <span class="tech-tag">Railway</span>
+                            </div>
+                            <div class="ver-mas-container">
+                                <a href="https://proyectpaperk.store/" class="ver-mas-btn" target="_blank">Ver proyecto</a>
+
+                            </div>
                         </div>
                     </div>
                     <div class="project-card">
-                        <h3>APP sistema Blog</h3>
-                        <p>Desarrollo de una API para gestionar un blog</p>
-                        <button class="project-details-btn">Ver más</button>
-                        <div class="project-details">
-                            <p>Desarrollé una API robusta para manejar la gestión y distribución elementos dinamicos de un blog personal para un cliente (Out)</p>
-                            <h4>Características clave:</h4>
-                            <ul>
-                                <li>Implementación una interfaz sencilla pero atractiva</li>
-                                <li>Sistema de autenticación y autorización OAuth 2.0</li>
-                                <li>Análisis de audiencia en tiempo real con Elasticsearch</li>
-                                <li>Escalado automático con Kubernetes</li>
-                            </ul>
+                        <img src="AND-ROS2.png" alt="APP sistema Blog" class="project-image">
+                        <div class="project-content">
+                            <h3>APP sistema Blog</h3>
+                            <p>Desarrollo de una API para gestionar un blog</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">OAuth 2.0</span>
+                                <span class="tech-tag">Elasticsearch</span>
+                            </div>
+                            <div class="ver-mas-container">
+                                <a href="" class="ver-mas-btn">Ver proyecto (OUT)</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,6 +183,16 @@
                             <p>Logro: Mejoré la eficiencia de transmisiones en un 30%.</p>
                         </div>
                     </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Pasantías</h3>
+                            <p class="timeline-date"> Suprasoft | 2024 - 2024</p>
+                            <p>Desarrollo PWA para gestión USUARIOS</p>
+                            <p>Se incorporaron nuevas features</p>
+                            <p>Se generó documentación</p>
+                            <p>Creación de PWA para gestionar usuarios que usan el servicio de Suprasoft</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -198,46 +208,12 @@
                 </form>
             </div>
         </section>
-
-        <section id="redes-sociales">
-            <div class="container">
-                <h2 class="section-title">Mis Redes Sociales</h2>
-                <div class="social-grid">
-                    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="social-item">
-                        <div class="icon-wrapper">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://www.instagram.com/your-instagram-profile" target="_blank" class="social-item">
-                        <div class="icon-wrapper">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="https://twitter.com/your-twitter-profile" target="_blank" class="social-item">
-                        <div class="icon-wrapper">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <span>X (Twitter)</span>
-                    </a>
-                    <a href="https://github.com/santiiander" target="_blank" class="social-item">
-                        <div class="icon-wrapper">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <span>GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Santiago Andermatten. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Santiago Andermatten. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
