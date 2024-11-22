@@ -4,109 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santiago Andermatten - Desarrollador Backend</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#experiencia">Experiencia</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+        <nav id="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="inicio" class="hero">
-            <div class="hero-content">
-                <h1>Santiago Andermatten</h1>
-                <p class="subtitle">Desarrollador Backend & Arquitecto de Sistemas</p>
-                <div class="hero-buttons">
+            <div class="container">
+                <h1 data-aos="fade-up">Santiago Andermatten</h1>
+                <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Desarrollador Backend & Arquitecto de Sistemas</p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
                     <a href="#" class="cta-button" id="download-cv">Descargar CV</a>
-                    <a href="#" class="cta-button" id="open-presentation">Presentación</a>
+                    <a href="#" class="cta-button" id="open-presentation">Ver Presentación</a>
                 </div>
-                <a href="#contacto" class="cta-button">Contáctame</a>
             </div>
         </section>
 
         <section id="sobre-mi">
             <div class="container">
-                <h2 class="section-title">Sobre Mí</h2>
+                <h2 data-aos="fade-up">Sobre Mí</h2>
                 <div class="about-content">
-                    <div class="about-text">
-                        <h3 class="centered-title">Perfil Profesional</h3>
+                    <div class="about-text" data-aos="fade-right">
                         <p>Soy un apasionado desarrollador backend con una sólida formación en programación y electrónica. Mi objetivo es crear soluciones eficientes y escalables que impulsen la próxima generación de aplicaciones web y servicios.</p>
                     </div>
-                    <div class="tech-stack">
-                        <h3 class="centered-title">Stack Tecnológico</h3>
-                        <ul class="tech-list">
-                            <li><i class="fab fa-python"></i> Python</li>
-                            <li><i class="fab fa-java"></i> Java</li>
-                            <li><i class="fab fa-node-js"></i> Node.js</li>
-                            <li><i class="fas fa-database"></i> SQL/NoSQL</li>
-                            <li><i class="fab fa-docker"></i> Docker</li>
-                            <li><i class="fab fa-aws"></i> AWS</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="personal-info">
-            <div class="container">
-                <h2 class="section-title">Conóceme Mejor</h2>
-                <div class="personal-content">
-                    <div class="photo-container">
+                    <div class="about-image" data-aos="fade-left">
                         <img src="finyo.png" alt="Santiago Andermatten" class="profile-photo">
                     </div>
-                    <div class="interests-hobbies">
-                        <h3 class="centered-title">Intereses y Hobbies</h3>
-                        <ul>
-                            <li>Desarrollo de proyectos open source</li>
-                            <li>Lectura de libros de ciencia ficción</li>
-                            <li>Mates al aire libre y videojuegos</li>
-                            <li>Participación en hackathons y eventos tech</li>
-                            <li>Viajar con mi pareja</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="carousel-container">
-                    <div class="carousel">
-                        <img src="Untitled.png" alt="Imagen 1" class="carousel-image">
-                        <img src="2.png" alt="Imagen 2" class="carousel-image">
-                        <img src="3.png" alt="Imagen 3" class="carousel-image">
-                    </div>
-                    <button class="carousel-button prev" aria-label="Imagen anterior">&lt;</button>
-                    <button class="carousel-button next" aria-label="Imagen siguiente">&gt;</button>
                 </div>
             </div>
         </section>
 
         <section id="habilidades">
             <div class="container">
-                <h2 class="section-title">Habilidades</h2>
+                <h2 data-aos="fade-up">Habilidades</h2>
                 <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-server"></i>
+                    <div class="skill-card" data-aos="zoom-in">
+                        <i class="fas fa-code"></i>
                         <h3>Desarrollo Backend</h3>
-                        <p>Diseño e implementación de aplicaciones robustas del lado del servidor</p>
+                        <p>Python, Java, Node.js</p>
                     </div>
-                    <div class="skill-card">
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
                         <i class="fas fa-database"></i>
-                        <h3>Diseño de Bases de Datos</h3>
-                        <p>Creación de estructuras de bases de datos eficientes y escalables</p>
+                        <h3>Bases de Datos</h3>
+                        <p>SQL, NoSQL, Diseño de BD</p>
                     </div>
-                    <div class="skill-card">
-                        <i class="fas fa-code-branch"></i>
-                        <h3>Desarrollo de APIs</h3>
-                        <p>Construcción de APIs RESTful y GraphQL para una integración perfecta</p>
+                    <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fas fa-server"></i>
+                        <h3>DevOps</h3>
+                        <p>Docker, AWS, CI/CD</p>
                     </div>
                 </div>
             </div>
@@ -114,42 +80,32 @@
 
         <section id="proyectos">
             <div class="container">
-                <h2 class="section-title">Proyectos Destacados</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <img src="paperK.png" alt="ProjetPaperK" class="project-image">
-                        <div class="project-content">
+                <h2 data-aos="fade-up">Proyectos Destacados</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up">
+                        <img src="paperK.png" alt="ProyetPaperK" class="project-image">
+                        <div class="project-info">
                             <h3>ProyetPaperK</h3>
-                            <p>PWA basada en la subida y descarga de archivos origamis para la comunidad</p>
+                            <p>PWA para subida y descarga de archivos origamis para la comunidad</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">FASTAPI</span>
-                                <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">HTML/CSS/JS</span>
-                                <span class="tech-tag">OAuth 2.0</span>
-                                <span class="tech-tag">Railway</span>
+                                <span>Python</span>
+                                <span>FASTAPI</span>
+                                <span>MySQL</span>
                             </div>
-                            <div class="ver-mas-container">
-                                <a href="https://proyectpaperk.store/" class="ver-mas-btn" target="_blank">Ver proyecto</a>
-
-                            </div>
+                            <a href="https://proyectpaperk.store/" class="project-link" target="_blank">Ver Proyecto</a>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <img src="AND-ROS2.png" alt="APP sistema Blog" class="project-image">
-                        <div class="project-content">
+                        <div class="project-info">
                             <h3>APP sistema Blog</h3>
-                            <p>Desarrollo de una API para gestionar un blog</p>
+                            <p>API para gestionar un blog con funcionalidades avanzadas</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">Express</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">OAuth 2.0</span>
-                                <span class="tech-tag">Elasticsearch</span>
+                                <span>Node.js</span>
+                                <span>Express</span>
+                                <span>MongoDB</span>
                             </div>
-                            <div class="ver-mas-container">
-                                <a href="" class="ver-mas-btn">Ver proyecto (OUT)</a>
-                            </div>
+                            <a href="#" class="project-link">Ver Proyecto (Próximamente)</a>
                         </div>
                     </div>
                 </div>
@@ -158,12 +114,13 @@
 
         <section id="experiencia">
             <div class="container">
-                <h2 class="section-title">Experiencia Laboral</h2>
+                <h2 data-aos="fade-up">Experiencia Laboral</h2>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-up">
                         <div class="timeline-content">
                             <h3>Tutor de Programación</h3>
-                            <p class="timeline-date">Kodland | 2023 - Presente</p>
+                            <p class="company">Kodland</p>
+                            <p class="date">2023 - Presente</p>
                             <ul>
                                 <li>Mejoré el rendimiento de los estudiantes en un 20%.</li>
                                 <li>Logré ser tutor avanzado en 2 meses.</li>
@@ -171,30 +128,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-content">
                             <h3>Desarrollo y gestión de Software</h3>
-                            <p class="timeline-date">Trabajo personal | 2020 - 2024</p>
+                            <p class="company">Trabajo personal</p>
+                            <p class="date">2020 - 2024</p>
                             <p>Desarrollo de software para pequeños negocios; gestión de inventarios y ventas.</p>
-                            <p>Logro: Incrementé la eficiencia operativa de los clientes.</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Desarrollo y gestión de Software</h3>
-                            <p class="timeline-date">Estudio Telered | 2018 - 2020</p>
-                            <p>Manejo de herramientas y software para eventos en vivo.</p>
-                            <p>Logro: Mejoré la eficiencia de transmisiones en un 30%.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="timeline-content">
                             <h3>Pasantías</h3>
-                            <p class="timeline-date"> Suprasoft | 2024 - 2024</p>
-                            <p>Desarrollo PWA para gestión USUARIOS</p>
-                            <p>Se incorporaron nuevas features</p>
-                            <p>Se generó documentación</p>
-                            <p>Creación de PWA para gestionar usuarios que usan el servicio de Suprasoft</p>
+                            <p class="company">Suprasoft</p>
+                            <p class="date">2024</p>
+                            <p>Desarrollo PWA para gestión de usuarios, incorporación de nuevas features y generación de documentación.</p>
                         </div>
                     </div>
                 </div>
@@ -203,8 +150,8 @@
 
         <section id="contacto">
             <div class="container">
-                <h2 class="section-title">Contáctame</h2>
-                <form id="contact-form" class="contact-form">
+                <h2 data-aos="fade-up">Contáctame</h2>
+                <form id="contact-form" class="contact-form" data-aos="fade-up">
                     <input type="text" name="name" placeholder="Nombre" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" placeholder="Mensaje" required></textarea>
@@ -212,34 +159,30 @@
                 </form>
             </div>
         </section>
-        <footer>
-            <div class="container">
-                <p>&copy; 2024 Santiago Andermatten. Todos los derechos reservados.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/santii_ander" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/santiago-andermatten/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="mailto:santiagoandermattendev@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
-                        <i class="far fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-        </footer>
-    
-        <div id="presentation-popup" class="popup">
-            <div class="popup-content">
-                <span class="close-popup">&times;</span>
-                <video id="presentation-video" controls>
-                    <source src="recursos/Presentacion Santiago.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
     </main>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Santiago Andermatten. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/santii_ander" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/santiago-andermatten/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:santiagoandermattendev@gmail.com"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
 
+    <div id="presentation-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <video id="presentation-video" controls>
+                <source src="recursos/Presentacion Santiago.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

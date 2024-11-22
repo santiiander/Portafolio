@@ -1,101 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const main = document.querySelector('main');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    let isScrolling = false;
-    let lastScrollTop = 0;
-    const scrollThreshold = 50; // Adjust this value to change the scroll sensitivity
+    // Inicializar AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
 
-    // Intersection Observer for fade-in animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+    // Navegación responsive
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
             }
         });
-    }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-        observer.observe(section);
+        burger.classList.toggle('toggle');
     });
 
-    // Smooth scrolling for navigation links
-    navLinks.forEach(anchor => {
+    // Smooth scroll para los enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 
-    // Improved scroll handling
-    main.addEventListener('scroll', () => {
-        if (isScrolling) return;
+    // Manejo del popup de presentación
+    const openPresentationBtn = document.getElementById('open-presentation');
+    const presentationPopup = document.getElementById('presentation-popup');
+    const closePopupBtn = document.querySelector('.close-popup');
+    const presentationVideo = document.getElementById('presentation-video');
 
-        const currentScrollTop = main.scrollTop;
-        const scrollDirection = currentScrollTop > lastScrollTop ? 'down' : 'up';
-        const scrollDifference = Math.abs(currentScrollTop - lastScrollTop);
+    openPresentationBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        presentationPopup.style.display = 'block';
+    });
 
-        if (scrollDifference > scrollThreshold) {
-            isScrolling = true;
-            const currentSectionIndex = Array.from(sections).findIndex(section => 
-                section.offsetTop <= currentScrollTop + window.innerHeight / 2 &&
-                section.offsetTop + section.offsetHeight > currentScrollTop + window.innerHeight / 2
-            );
+    closePopupBtn.addEventListener('click', () => {
+        presentationPopup.style.display = 'none';
+        presentationVideo.pause();
+    });
 
-            let targetIndex = scrollDirection === 'down' ? currentSectionIndex + 1 : currentSectionIndex - 1;
-            targetIndex = Math.max(0, Math.min(targetIndex, sections.length - 1));
-
-            sections[targetIndex].scrollIntoView({ behavior: 'smooth' });
-
-            setTimeout(() => {
-                isScrolling = false;
-                lastScrollTop = main.scrollTop;
-            }, 1000);
-        } else {
-            lastScrollTop = currentScrollTop;
+    window.addEventListener('click', (e) => {
+        if (e.target === presentationPopup) {
+            presentationPopup.style.display = 'none';
+            presentationVideo.pause();
         }
     });
 
-    // Carousel functionality
-    const carousel = document.querySelector('.carousel');
-    const images = carousel.querySelectorAll('img');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    let currentIndex = 0;
-
-    function showImage(index) {
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
-
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    }
-
-    nextButton.addEventListener('click', nextImage);
-    prevButton.addEventListener('click', prevImage);
-
-    // Auto-slide every 5 seconds
-    let autoSlideInterval = setInterval(nextImage, 5000);
-
-    // Pause auto-slide on hover
-    const carouselContainer = document.querySelector('.carousel-container');
-    carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-
-    carouselContainer.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(nextImage, 5000);
-    });
-
-                // Form submission
+    // Manejo del formulario de contacto
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -133,48 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(`Hubo un problema al enviar el mensaje: ${error.message}`);
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const main = document.querySelector('main');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    let isScrolling = false;
-    let lastScrollTop = 0;
-    const scrollThreshold = 50;
-
-    // Existing code...
-
-    // New code for popup functionality
-    const openPresentationBtn = document.getElementById('open-presentation');
-    const presentationPopup = document.getElementById('presentation-popup');
-    const closePopupBtn = document.querySelector('.close-popup');
-    const presentationVideo = document.getElementById('presentation-video');
-
-    openPresentationBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        presentationPopup.style.display = 'block';
-    });
-
-    closePopupBtn.addEventListener('click', () => {
-        presentationPopup.style.display = 'none';
-        presentationVideo.pause();
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === presentationPopup) {
-            presentationPopup.style.display = 'none';
-            presentationVideo.pause();
-        }
-    });
-
-    // Download CV functionality
+    // Descargar CV
     const downloadCvBtn = document.getElementById('download-cv');
     downloadCvBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        // Replace 'path-to-your-cv.pdf' with the actual path to your CV file
         window.open('recursos/CVAndermatten.pdf', '_blank');
     });
-
-    // Existing code...
 });
+
