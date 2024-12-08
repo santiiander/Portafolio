@@ -69,26 +69,21 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('https://sheetdb.io/api/v1/vq0vb4rjtuy0i', {
+            const response = await fetch('https://hook.us2.make.com/vrnerzuvj4njrvlkmae4ydti0mhvsc41', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
                 },
-                body: JSON.stringify({
-                    data: [data]
-                })
+                body: JSON.stringify(data)
             });
 
-            const result = await response.json();
-            
             if (response.ok) {
-                console.log('Success:', result);
+                console.log('Success: Form data sent');
                 alert('Gracias por tu mensaje. Te contactaré pronto.');
                 form.reset();
             } else {
-                console.error('Error response:', result);
-                throw new Error(`Error al enviar el formulario: ${result.error || response.statusText}`);
+                console.error('Error response:', response.statusText);
+                throw new Error(`Error al enviar el formulario: ${response.statusText}`);
             }
         } catch (error) {
             console.error('Error:', error);
@@ -101,6 +96,36 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadCvBtn.addEventListener('click', (e) => {
         e.preventDefault();
         window.open('recursos/CVAndermatten.pdf', '_blank');
+    });
+
+    // Typing effect
+    const text = "Desarrollador Backend & Arquitecto de Sistemas";
+    const speed = 50; // Milliseconds per character
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typing-effect").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    typeWriter();
+
+    // Scroll to top button
+    const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add("visible");
+        } else {
+            scrollToTopBtn.classList.remove("visible");
+        }
+    });
+
+    scrollToTopBtn.addEventListener("click", function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
     });
 });
 
